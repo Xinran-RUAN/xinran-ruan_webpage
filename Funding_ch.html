@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>阮欣然 | 项目与奖励</title>
+  <style>
+
+:root{
+  --ink:#233b73;
+  --text:#202632;
+  --muted:#6c7688;
+  --line:#dbe1ea;
+  --bg:#f5f6f8;
+  --tab:#f2f4f8;
+  --tab-active:#e9eef9;
+  --link:#3e5fb6;
+  --card:#f8f8fa;
+  --card-line:#e3e6ec;
+  --col-time:170px;
+  --col-role:210px;
+  --entry-gap:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--text);
+  font-family:"Times New Roman", Georgia, "Noto Serif SC", "Songti SC", serif;
+  background:var(--bg);
+}
+a{color:var(--link); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{
+  width:min(1120px, calc(100% - 40px));
+  margin:0 auto;
+}
+.top{
+  padding:26px 0 10px;
+  text-align:center;
+}
+.title{
+  margin:0;
+  font-size:30px;
+  line-height:1.12;
+  color:var(--ink);
+  font-weight:700;
+}
+.tabs{
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap:10px;
+  margin-top:20px;
+}
+.tabs a{
+  display:block;
+  padding:14px 12px;
+  text-align:center;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:.01em;
+  color:#374055;
+  background:#f5f6fa;
+  border:1px solid #dde3ec;
+  border-radius:12px;
+}
+.tabs a.active{
+  color:#1f3366;
+  background:#dde6f7;
+  border-color:#bccae6;
+}
+.tabs a:hover{
+  text-decoration:none;
+  background:#eef2f8;
+}
+.hero{
+  margin-top:26px;
+}
+.hero-card{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:30px;
+  align-items:center;
+  padding:24px 24px;
+  background:var(--card);
+  border:1px solid var(--card-line);
+  border-radius:20px;
+}
+.photo{
+  width:100%;
+  height:300px;
+  overflow:hidden;
+  border-radius:16px;
+  background:#eef2f6;
+  border:1px solid #e3e7ef;
+}
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.hero-name{
+  margin:0 0 10px;
+  font-size:36px;
+  line-height:1.08;
+  color:#111827;
+  font-weight:700;
+}
+.hero-position{
+  margin:0 0 7px;
+  font-size:24px;
+  line-height:1.35;
+  font-weight:600;
+}
+.hero-affiliation,
+.hero-email{
+  margin:0 0 7px;
+  font-size:21px;
+  line-height:1.45;
+  color:#2f3642;
+}
+.hero-motto{
+  margin:14px 0 0;
+  font-size:18px;
+  line-height:1.45;
+  color:var(--muted);
+  font-style:italic;
+}
+.section{
+  margin-top:28px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+}
+.section-title,
+.section h2,
+h2{
+  margin:0 0 14px;
+  font-size:28px;
+  line-height:1.2;
+  color:#151b28;
+  font-weight:700;
+}
+.entries{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.entry{
+  padding:6px 0 8px;
+}
+.entry-main{
+  display:grid;
+  grid-template-columns:var(--col-time) var(--col-role) 1fr;
+  column-gap:var(--entry-gap);
+  align-items:start;
+  font-size:20px;
+  line-height:1.42;
+}
+.entry-sub{
+  margin-top:2px;
+  padding-left:calc(var(--col-time) + var(--col-role) + var(--entry-gap) * 2);
+  font-size:17px;
+  line-height:1.35;
+  color:#8993a5;
+}
+.simple-list{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(220px, 1fr));
+  gap:8px 28px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.simple-list li{
+  position:relative;
+  padding-left:16px;
+  font-size:20px;
+  line-height:1.5;
+}
+.simple-list li::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  top:0;
+  color:#7b8597;
+}
+.pub-item{
+  display:grid;
+  grid-template-columns:58px 1fr;
+  gap:8px;
+  margin-bottom:16px;
+  font-size:21px;
+  line-height:1.55;
+}
+.pub-no{font-weight:700}
+.pub-title{font-weight:700}
+.talk-clean{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+.talk-entry{
+  padding-bottom:16px;
+  border-bottom:1px solid #dde3ec;
+}
+.talk-entry:last-child{
+  border-bottom:none;
+}
+.talk-title{
+  font-size:24px;
+  line-height:1.4;
+  font-weight:600;
+  color:#2f5874;
+}
+.talk-date{
+  margin-top:6px;
+  font-size:18px;
+  color:#8a93a5;
+}
+.talk-meta{
+  margin-top:6px;
+  font-size:20px;
+  color:#2e3441;
+}
+.funding-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.funding-entry{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  column-gap:26px;
+  padding:10px 0 18px;
+  border-bottom:1px solid #dde3ec;
+}
+.funding-entry:last-child{
+  border-bottom:none;
+}
+.funding-year{
+  font-size:20px;
+  line-height:1.5;
+  color:#7a8498;
+  font-weight:600;
+}
+.funding-body{
+  font-size:22px;
+  line-height:1.65;
+  color:#2b2f38;
+}
+.funding-title{
+  font-weight:600;
+  color:#222;
+}
+.funding-code{
+  color:#666;
+}
+.footer{
+  padding:30px 0 40px;
+  text-align:center;
+  color:#97a0b1;
+  font-size:15px;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (max-width: 980px){
+  .title{font-size:32px}
+  .tabs{grid-template-columns:repeat(2, 1fr)}
+  .tabs a{font-size:18px}
+  .hero-card{
+    grid-template-columns:1fr;
+    padding:22px;
+  }
+  .photo{
+    width:min(220px, 100%);
+    height:290px;
+    margin:0 auto;
+  }
+  .hero-name{font-size:34px}
+  .hero-position{font-size:21px}
+  .hero-affiliation,.hero-email{font-size:19px}
+  .entry-main{
+    grid-template-columns:1fr;
+    row-gap:1px;
+    font-size:19px;
+  }
+  .entry-sub{
+    padding-left:0;
+    margin-top:3px;
+    font-size:17px;
+  }
+  .simple-list,
+  .funding-entry{
+    grid-template-columns:1fr;
+  }
+  .pub-item{grid-template-columns:1fr}
+  .talk-title{font-size:21px}
+  .talk-meta{font-size:18px}
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <h1 class="title">欢迎来到阮欣然的个人主页</h1>
+
+      <nav class="tabs">
+        <a  href="index_ch.html">个人信息</a>
+        <a  href="Publications_ch.html">论文</a>
+        <a  href="Talks_ch.html">报告</a>
+        <a class="active" href="Funding_ch.html">项目与奖励</a>
+        <a href="index.html">English</a>
+      </nav>
+
+    </header>
+<section class="section">
+<h2>项目与奖励</h2>
+<div class="funding-list">
+<div class="funding-entry">
+<div class="funding-year">2021</div>
+<div class="funding-body">
+                        北京海外人才聚集工程（BOTAP）
+                    </div>
+</div>
+<div class="funding-entry">
+<div class="funding-year">2023–2025</div>
+<div class="funding-body">
+<span class="funding-title">两类非标准 Gross-Pitaevskii 方程的数值方法研究</span><br/>
+                        国家自然科学基金青年项目
+                        <span class="funding-code">（No. 12201436）</span>
+</div>
+</div>
+<div class="funding-entry">
+<div class="funding-year">2023–2025</div>
+<div class="funding-body">
+<span class="funding-title">复合结构种群模型的演化与保结构算法</span><br/>
+                        北京市教委科技计划项目
+                        <span class="funding-code">（No. KM202310028016）</span>
+</div>
+</div>
+</div>
+</section>
+    <div class="footer">© 2026 Xinran Ruan</div>
+  </div>
+</body>
+</html>
